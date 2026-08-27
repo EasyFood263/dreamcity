@@ -1,36 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DreamCity Pakistan — Living City</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DreamCity Pakistan — Open World</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#8fc9ee;font-family:Inter,system-ui,Arial,sans-serif}#game{position:fixed;inset:0}
-.hud{position:fixed;inset:0;pointer-events:none;color:#fff}.panel{background:rgba(9,18,28,.82);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 40px rgba(0,0,0,.28);backdrop-filter:blur(12px);border-radius:16px}
-.brand{position:absolute;left:18px;top:16px;padding:13px 17px}.brand b{font-size:20px;letter-spacing:.1px}.brand small{display:block;margin-top:3px;color:#cbd6df;font-size:13px}.stats{position:absolute;right:18px;top:16px;padding:13px 17px;font-size:15px}.stats span{margin-left:7px}.tip{position:absolute;left:18px;bottom:18px;padding:12px 16px;max-width:560px}.tip b{color:#ffd65a;font-size:15px}.tip div{margin-top:4px;color:#eef4f8;font-size:13px;line-height:1.45}.help{position:absolute;right:18px;bottom:18px;pointer-events:auto}.help button{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 16px;background:#10283b;color:#fff;font-weight:800;cursor:pointer}.modal{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(580px,calc(100% - 28px));padding:25px;pointer-events:auto}.modal h2{margin:0 0 10px}.modal p{line-height:1.6;color:#dbe3e9}.modal button{border:0;border-radius:10px;padding:10px 16px;background:#ffd65a;font-weight:900;cursor:pointer}.cross{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px;border:1px solid rgba(255,255,255,.9);border-radius:50%;box-shadow:0 0 8px rgba(255,255,255,.7)}
-.gameStats{position:absolute;left:18px;top:92px;width:220px;padding:12px 14px;font-size:12px}.statRow{display:flex;justify-content:space-between;align-items:center;margin:5px 0}.bar{height:7px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden;margin-top:4px}.bar i{display:block;height:100%;width:100%;background:#52d273;border-radius:99px;transition:width .15s}.ammo{font-size:18px;font-weight:900;color:#ffd65a}.mission{position:absolute;left:50%;top:16px;transform:translateX(-50%);min-width:280px;padding:10px 15px;text-align:center;border-color:rgba(255,213,79,.3)}.mission b{color:#ffd54f}.mission.active{box-shadow:0 0 28px rgba(255,213,79,.15)}.message{position:absolute;left:50%;bottom:110px;transform:translate(-50%,10px);padding:11px 18px;opacity:0;transition:.2s;font-weight:800;white-space:nowrap}.message.show{opacity:1;transform:translate(-50%,0)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#8fc9ee;font-family:Inter,system-ui,Arial,sans-serif}#game{position:fixed;inset:0}.hud{position:fixed;inset:0;pointer-events:none;color:#fff}.panel{background:rgba(9,18,28,.82);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 40px rgba(0,0,0,.28);backdrop-filter:blur(12px);border-radius:16px}.brand{position:absolute;left:18px;top:16px;padding:13px 17px}.brand b{font-size:20px}.brand small{display:block;margin-top:3px;color:#cbd6df;font-size:13px}.stats{position:absolute;right:18px;top:16px;padding:13px 17px;font-size:15px}.stats span{margin-left:7px}.tip{position:absolute;left:18px;bottom:18px;padding:12px 16px;max-width:650px}.tip b{color:#ffd65a;font-size:15px}.tip div{margin-top:4px;color:#eef4f8;font-size:13px;line-height:1.5}.help{position:absolute;right:18px;bottom:18px;pointer-events:auto}.help button{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 16px;background:#10283b;color:#fff;font-weight:800;cursor:pointer}.modal{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(580px,calc(100% - 28px));padding:25px;pointer-events:auto}.modal h2{margin:0 0 10px}.modal p{line-height:1.6;color:#dbe3e9}.modal button{border:0;border-radius:10px;padding:10px 16px;background:#ffd65a;font-weight:900;cursor:pointer}.cross{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border:1px solid rgba(255,255,255,.95);border-radius:50%;box-shadow:0 0 8px rgba(255,255,255,.7)}.gameStats{position:absolute;left:18px;top:92px;width:220px;padding:12px 14px;font-size:12px}.statRow{display:flex;justify-content:space-between;align-items:center;margin:5px 0}.bar{height:7px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden;margin-top:4px}.bar i{display:block;height:100%;width:100%;background:#52d273;border-radius:99px;transition:width .15s}.ammo{font-size:18px;font-weight:900;color:#ffd65a}.mission{position:absolute;left:50%;top:16px;transform:translateX(-50%);min-width:300px;padding:10px 15px;text-align:center;border-color:rgba(255,213,79,.3)}.mission b{color:#ffd54f}.mission.active{box-shadow:0 0 28px rgba(255,213,79,.15)}.message{position:absolute;left:50%;bottom:110px;transform:translate(-50%,10px);padding:11px 18px;opacity:0;transition:.2s;font-weight:800;white-space:nowrap}.message.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:700px){.brand{left:8px;top:8px}.brand small{display:none}.stats{right:8px;top:8px;font-size:12px}.tip{left:8px;bottom:8px;font-size:12px}.help{right:8px;bottom:8px}.tip div{font-size:11px}.gameStats{left:8px;top:72px;width:190px}.mission{top:8px;min-width:220px;font-size:12px}.message{bottom:90px;font-size:12px}}
-</style>
-</head>
-<body>
-<div id="game"></div>
-<div class="hud">
- <div class="panel brand"><b>🏙️ DreamCity Pakistan</b><small>Living City • Open World Prototype</small></div>
- <div class="panel stats">🪙 <b id="cashValue">25,000</b><span>⭐ <b id="wantedValue">☆☆☆☆☆</b></span><span>🕘 <b id="time">08:00</b></span></div>
- <div class="panel gameStats">
-   <div class="statRow"><span>❤️ Health</span><b><span id="healthValue">100</span>%</b></div>
-   <div class="bar"><i id="healthBar"></i></div>
-   <div class="statRow"><span>🔫 Ammo</span><span class="ammo" id="ammoValue">12 / 12</span></div>
- </div>
- <div class="panel mission" id="missionPanel"><b>MISSION</b><div id="missionText">Go to the yellow marker and press E</div></div>
- <div class="panel message" id="gameMessage"></div>
- <div class="panel tip"><b>Controls</b><div>WASD / Arrow Keys — move • Shift — run • Mouse — look • Click — shoot • R — reload • E — mission</div></div>
- <div class="help"><button id="help">❓ Help</button></div>
- <div class="panel modal" id="modal"><h2>DreamCity Pakistan</h2><p>Explore the city, walk through parks and streets, watch traffic and pedestrians, then visit the yellow marker to start a street mission. Click to shoot, R to reload, and E to interact. This build is the gameplay foundation; vehicles, shops, interiors, advanced animations and larger missions can be added in the next phases.</p><button id="close">Close</button></div>
- <div class="cross"></div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="game.js"></script>
-<script src="systems.js"></script>
-</body>
-</html>
+</style></head>
+<body><div id="game"></div><div class="hud">
+<div class="panel brand"><b>🏙️ DreamCity Pakistan</b><small>Open World • Phase 2</small></div>
+<div class="panel stats">🪙 <b id="cashValue">25,000</b><span>⭐ <b id="wantedValue">☆☆☆☆☆</b></span><span>🕘 <b id="time">08:00</b></span></div>
+<div class="panel gameStats"><div class="statRow"><span>❤️ Health</span><b><span id="healthValue">100</span>%</b></div><div class="bar"><i id="healthBar"></i></div><div class="statRow"><span>🔫 Ammo</span><span class="ammo" id="ammoValue">12 / 12</span></div></div>
+<div class="panel mission" id="missionPanel"><b>MISSION / VEHICLE</b><div id="missionText">Go to the yellow marker and press E</div></div>
+<div class="panel message" id="gameMessage"></div>
+<div class="panel tip"><b>Controls</b><div>WASD / Arrows — move • Shift — run • Mouse — look • Click — shoot • R — reload • E — enter car / shop / mission / exit car</div></div>
+<div class="help"><button id="help">❓ Help</button></div>
+<div class="panel modal" id="modal"><h2>DreamCity Pakistan — Phase 2</h2><p>Explore the living city. Walk to a colored shop marker and press E to interact. Walk near a car and press E to enter it; use W/S to drive and A/D to steer. Visit the yellow marker to start a street mission. Shooting raises wanted level. The world now has a continuous day/night cycle and your cash is saved in this browser.</p><button id="close">Close</button></div>
+<div class="cross"></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="game.js"></script><script src="systems.js"></script>
+<script>const help=document.getElementById('help'),modal=document.getElementById('modal'),close=document.getElementById('close');help.onclick=()=>modal.style.display='block';close.onclick=()=>modal.style.display='none';</script>
+</body></html>
