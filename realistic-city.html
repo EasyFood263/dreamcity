@@ -8,15 +8,15 @@
 @media(max-width:700px){.brand{left:8px;top:8px}.brand small{display:none}.stats{right:8px;top:8px;font-size:12px}.tip{left:8px;bottom:8px;font-size:12px}.help{right:8px;bottom:8px}.tip div{font-size:11px}.gameStats{left:8px;top:72px;width:190px}.mission{top:8px;min-width:220px;font-size:12px}.message{bottom:90px;font-size:12px}}
 </style></head>
 <body><div id="game"></div><div class="hud">
-<div class="panel brand"><b>🏙️ DreamCity Pakistan</b><small>Open World • Phase 2</small></div>
+<div class="panel brand"><b>🏙️ DreamCity Pakistan</b><small>Open World • Phase 3</small></div>
 <div class="panel stats">🪙 <b id="cashValue">25,000</b><span>⭐ <b id="wantedValue">☆☆☆☆☆</b></span><span>🕘 <b id="time">08:00</b></span></div>
 <div class="panel gameStats"><div class="statRow"><span>❤️ Health</span><b><span id="healthValue">100</span>%</b></div><div class="bar"><i id="healthBar"></i></div><div class="statRow"><span>🔫 Ammo</span><span class="ammo" id="ammoValue">12 / 12</span></div></div>
 <div class="panel mission" id="missionPanel"><b>MISSION / VEHICLE</b><div id="missionText">Go to the yellow marker and press E</div></div>
 <div class="panel message" id="gameMessage"></div>
 <div class="panel tip"><b>Controls</b><div>WASD / Arrows — move • Shift — run • Mouse — look • Click — shoot • R — reload • E — enter car / shop / mission / exit car</div></div>
 <div class="help"><button id="help">❓ Help</button></div>
-<div class="panel modal" id="modal"><h2>DreamCity Pakistan — Phase 2</h2><p>Explore the living city. Walk to a colored shop marker and press E to interact. Walk near a car and press E to enter it; use W/S to drive and A/D to steer. Visit the yellow marker to start a street mission. Shooting raises wanted level. The world now has a continuous day/night cycle and your cash is saved in this browser.</p><button id="close">Close</button></div>
+<div class="panel modal" id="modal"><h2>DreamCity Pakistan — Phase 3</h2><p>Explore the living city, use vehicles, visit shops and start missions. Shooting raises your wanted level and now brings police units that chase you. If police catch you, health drops and you can get busted. Your cash is saved in this browser.</p><button id="close">Close</button></div>
 <div class="cross"></div></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="game.js"></script><script src="systems.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="game.js"></script><script src="systems.js"></script><script src="phase3.js"></script>
 <script>const help=document.getElementById('help'),modal=document.getElementById('modal'),close=document.getElementById('close');help.onclick=()=>modal.style.display='block';close.onclick=()=>modal.style.display='none';</script>
 </body></html>
